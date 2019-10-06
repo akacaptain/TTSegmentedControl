@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentedControl.selectItemAt(index: 2, animated: false)
-        
+        /*
         useImageInsideAttributes(image: UIImage(named: "phone")!, atIndex: 2)
         addImageInsideAttributes(image: UIImage(named: "phone")!, atIndex: 1)
+        */
     }
 
     func addImageInsideAttributes(image: UIImage, atIndex: Int) {

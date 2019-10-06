@@ -13,15 +13,15 @@ import UIKit
 open class TTSegmentedControl: UIView {
     
     //Configure the options to for a custom design
-    @IBInspectable open var defaultTextFont: UIFont = UIFont.helveticaNeueLight(12)
-    @IBInspectable open var selectedTextFont: UIFont = UIFont.helveticaNeueLight(12)
+    @IBInspectable open var defaultTextFont: UIFont = UIFont.systemFont(ofSize: 15)
+    @IBInspectable open var selectedTextFont: UIFont = UIFont.boldSystemFont(ofSize: 15)
     @IBInspectable open var defaultTextColor: UIColor = UIColor.black
     @IBInspectable open var selectedTextColor: UIColor = UIColor.white
     @IBInspectable open var useGradient: Bool = true
     
     @IBInspectable open var containerBackgroundColor: UIColor = TTSegmentedControl.UIColorFromRGB(0xF4F4F4)
     @IBInspectable open var thumbColor: UIColor = UIColor.clear
-    @IBInspectable open var thumbGradientColors: [UIColor]? = [TTSegmentedControl.UIColorFromRGB(0xFFE900),TTSegmentedControl.UIColorFromRGB(0xFFB400)]
+    @IBInspectable open var thumbGradientColors: [UIColor]? = [.systemTeal,.systemBlue]
     @IBInspectable open var thumbShadowColor: UIColor = TTSegmentedControl.UIColorFromRGB(0x9B9B9B)
     @IBInspectable open var useShadow:Bool = true
     
@@ -38,12 +38,12 @@ open class TTSegmentedControl: UIView {
     open var animationOptions:BounceOptions = BounceOptions()
     open var hasBounceAnimation:Bool = false
     public struct BounceOptions {
-        var springDamping:CGFloat = 0.7
+        var springDamping:CGFloat = 0.9
         var springInitialVelocity:CGFloat = 0.2
         var options:UIView.AnimationOptions = .curveEaseInOut
     }
     
-    open var itemTitles: [String] = ["Item1", "Item2", "Item3"]
+    open var itemTitles: [String] = ["One", "Two", "Three"]
     
     open var attributedDefaultTitles: [NSAttributedString]!
     open var attributedSelectedTitles: [NSAttributedString]!
@@ -58,7 +58,7 @@ open class TTSegmentedControl: UIView {
     
     fileprivate(set) var isDragging = false
     open var allowDrag = true
-    open var allowChangeThumbWidth = true
+    open var allowChangeThumbWidth = false
     
     fileprivate var containerView = UIView()
     fileprivate var thumbContainerView = UIView()
