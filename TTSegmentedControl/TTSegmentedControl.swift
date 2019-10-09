@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 
 @IBDesignable
 open class TTSegmentedControl: UIView {
@@ -100,31 +100,30 @@ open class TTSegmentedControl: UIView {
         super.init(coder: aDecoder)
     }
     
-    
     open override func layoutSubviews() {
         super.layoutSubviews()
         
         if !isConfigurated {
             configureItemsConent()
             configureViewBounds()
-            
+
             configureContainerView()
             configureItems()
             configureSelectedView()
             configureSelectedLabelsView()
             configureSelectedLabelItems()
-            
+
             isConfigurated = true
         }
-        
+       
         containerView.frame = bounds
         containerView.layer.cornerRadius = cornerRadius < 0 ? 0.5 * containerView.frame.size.height : cornerRadius
         selectedLabelsView.frame = containerView.bounds
-        
+
         updateFrameForLables(allItemLabels)
         updateFrameForLables(allSelectedItemLabels)
         updateSelectedViewFrame()
-        
+
         selectItemAt(index:currentSelectedIndex)
         _ = self.subviews.map({$0.isExclusiveTouch = true})
         

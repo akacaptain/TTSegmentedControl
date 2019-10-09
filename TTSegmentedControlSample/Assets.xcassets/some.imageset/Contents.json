@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "never_48.png",
+      "filename" : "occasionally_48.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "never.png",
       "scale" : "2x"
     },
     {
